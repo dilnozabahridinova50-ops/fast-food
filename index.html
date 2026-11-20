@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MazaliFast — Tez va Mazali Fast Food Online Buyurtma</title>
+
+  <!-- Google Fonts: Poppins & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Bootstrap 5 CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Bootstrap Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  />
+
+  <!-- Maxsus CSS fayli -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNavbar" data-bs-offset="85" tabindex="0">
+
+  <!-- Navigatsiya menyusi -->
+  <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-dark fixed-top glass-nav py-3">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2 fw-bold fs-4" href="#bosh-sahifa">
+        <span class="brand-badge d-inline-flex align-items-center justify-content-center rounded-3">
+          <i class="bi bi-fire text-white"></i>
+        </span>
+        <span>Mazali<span class="text-warning">Fast</span></span>
+      </a>
+
+      <button
+        class="navbar-toggler border-0 shadow-none"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarContent"
+        aria-controls="navbarContent"
+        aria-expanded="false"
+        aria-label="Menyuni ochish"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-2 fw-medium">
+          <li class="nav-item">
+            <a class="nav-link" href="#bosh-sahifa">Bosh sahifa</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#mashhur">Mashhur</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#menyu">Menyu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#takliflar">Chegirmalar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#fikrlar">Fikrlar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#aloqa">Aloqa</a>
+          </li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-2">
+          <button
+            type="button"
+            class="btn btn-warning fw-semibold px-3 py-2 rounded-pill position-relative d-inline-flex align-items-center gap-2 cart-trigger-btn"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#cartOffcanvas"
+            aria-controls="cartOffcanvas"
+          >
+            <i class="bi bi-bag-check-fill fs-5"></i>
+            <span>Savat</span>
+            <span
+              id="navbarCartCount"
+              class="badge rounded-pill bg-dark text-warning ms-1"
+            >0</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Bosh sahifa / Katta banner -->
+  <header id="bosh-sahifa" class="hero-section d-flex align-items-center text-white pt-5">
+    <div class="hero-overlay"></div>
+    <div class="container position-relative z-2 py-5">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-7 text-center text-lg-start">
+          <span class="badge rounded-pill promo-pill px-3 py-2 mb-3 fw-semibold">
+            <i class="bi bi-lightning-charge-fill text-warning me-1"></i>
+            30 daqiqada issiq va yangi yetkazib berish
+          </span>
+          <h1 class="display-3 fw-extrabold lh-tight mb-3">
+            Eng mazali <span class="text-warning">Fast Food</span> bir bosishda!
+          </h1>
+          <p class="lead text-light-emphasis text-white-75 mb-4 mx-auto mx-lg-0 hero-desc">
+            Shirali burgerlar, qarsildoq lavashlar, pishloqli pitsalar, muzdek ichimliklar va
+            shirin desertlar. Hoziroq tanlang va eshigingizgacha tez yetkazib oling.
+          </p>
+          <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-3 mb-4">
+            <a href="#menyu" class="btn btn-warning btn-lg fw-bold px-4 py-3 rounded-pill shadow-lg hover-lift">
+              <i class="bi bi-cart-plus-fill me-2"></i>Hozir buyurtma berish
+            </a>
+            <a href="#takliflar" class="btn btn-outline-light btn-lg fw-semibold px-4 py-3 rounded-pill hover-lift">
+              <i class="bi bi-percent me-2"></i>Maxsus takliflar
+            </a>
+          </div>
+          <div class="row g-3 pt-2 text-start justify-content-center justify-content-lg-start">
+            <div class="col-auto">
+              <div class="d-flex align-items-center gap-2 bg-dark-glass px-3 py-2 rounded-3">
+                <i class="bi bi-star-fill text-warning fs-5"></i>
+                <div>
+                  <div class="fw-bold small">4.9 / 5 Reyting</div>
+                  <div class="text-white-50 extra-small">4,500+ mamnun mijoz</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-auto">
+              <div class="d-flex align-items-center gap-2 bg-dark-glass px-3 py-2 rounded-3">
+                <i class="bi bi-clock-history text-warning fs-5"></i>
+                <div>
+                  <div class="fw-bold small">24/7 Xizmat</div>
+                  <div class="text-white-50 extra-small">Har kuni ochiq</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="hero-showcase-card position-relative rounded-4 overflow-hidden shadow-2xl">
+            <img
+              src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1000&q=80"
+              alt="Mazali burger va kartoshka fri"
+              class="img-fluid w-100 hero-main-img"
+            />
+            <div class="floating-offer-badge p-3 rounded-4 shadow-lg">
+              <div class="d-flex align-items-center justify-content-between gap-3">
+                <div>
+                  <span class="badge bg-danger mb-1">HIT TAKLIF</span>
+                  <h6 class="fw-bold text-dark mb-0">Dabl Chizburger + Fri</h6>
+                  <small class="text-muted">Promo-kod: <strong class="text-dark">MAZALI15</strong> (-15%)</small>
+                </div>
+                <button
+                  type="button"
+                  class="btn btn-dark btn-sm rounded-pill px-3 fw-semibold"
+                  onclick="buyNowProduct('chizburger')"
+                >
+                  Olish
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Mashhur mahsulotlar bo'limi -->
+    <section id="mashhur" class="py-5 bg-light">
+      <div class="container py-3">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4 gap-2">
+          <div>
+            <span class="section-tag text-danger fw-bold text-uppercase small">Eng ko‘p tanlangan</span>
+            <h2 class="display-6 fw-bold mt-1 mb-0">Mashhur mahsulotlar</h2>
+          </div>
+          <a href="#menyu" class="btn btn-outline-dark rounded-pill px-4 fw-semibold align-self-start align-self-md-auto">
+            Barcha menyuni ko‘rish <i class="bi bi-arrow-right ms-1"></i>
+          </a>
+        </div>
+        <div id="popularProductsGrid" class="row g-4"></div>
+      </div>
+    </section>
+
+    <!-- Maxsus takliflar va chegirmalar -->
+    <section id="takliflar" class="py-5">
+      <div class="container py-2">
+        <div class="text-center max-w-2xl mx-auto mb-5">
+          <span class="section-tag text-danger fw-bold text-uppercase small">Foydali aksiyalar</span>
+          <h2 class="display-6 fw-bold mt-1">Maxsus takliflar va chegirmalar</h2>
+          <p class="text-muted mb-0">
+            Buyurtmani rasmiylashtirish oynasida quyidagi promo-kodlardan birini kiriting va tejang.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="offer-card h-100 p-4 rounded-4 border-0 shadow-sm bg-gradient-red text-white d-flex flex-column justify-content-between">
+              <div>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <span class="badge bg-warning text-dark fw-bold px-3 py-2 rounded-pill">-15% CHEGIRMA</span>
+                  <i class="bi bi-tag-fill fs-3 text-warning"></i>
+                </div>
+                <h4 class="fw-bold">Yangi mijozlar uchun</h4>
+                <p class="text-white-75 small mb-4">
+                  Butun savat summasiga 15% chegirma oling. Fast food, ichimlik va desertlar uchun amal qiladi.
+                </p>
+              </div>
+              <div class="d-flex align-items-center justify-content-between bg-black-25 p-3 rounded-3">
+                <div>
+                  <small class="d-block text-white-50">Promo-kod</small>
+                  <strong class="fs-6 tracking-wide text-warning">MAZALI15</strong>
+                </div>
+                <button
+                  type="button"
+                  class="btn btn-sm btn-light fw-bold rounded-pill px-3 copy-promo-btn"
+                  data-promo="MAZALI15"
+                >
+                  Nusxalash
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="offer-card h-100 p-4 rounded-4 border-0 shadow-sm bg-gradient-dark text-white d-flex flex-column justify-content-between">
+              <div>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <span class="badge bg-success fw-bold px-3 py-2 rounded-pill">-10% CHEGIRMA</span>
+                  <i class="bi bi-lightning-charge-fill fs-3 text-warning"></i>
+                </div>
+                <h4 class="fw-bold">Kundalik tezkor kombo</h4>
+                <p class="text-white-75 small mb-4">
+                  Do‘stlar bilan tushlik yoki kechki ovqat uchun barcha buyurtmalarga 10% chegirma.
+                </p>
+              </div>
+              <div class="d-flex align-items-center justify-content-between bg-white-10 p-3 rounded-3">
+                <div>
+                  <small class="d-block text-white-50">Promo-kod</small>
+                  <strong class="fs-6 tracking-wide text-warning">FAST10</strong>
+                </div>
+                <button
+                  type="button"
+                  class="btn btn-sm btn-warning fw-bold rounded-pill px-3 copy-promo-btn"
+                  data-promo="FAST10"
+                >
+                  Nusxalash
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="offer-card h-100 p-4 rounded-4 border-0 shadow-sm bg-gradient-amber text-dark d-flex flex-column justify-content-between">
+              <div>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <span class="badge bg-dark text-warning fw-bold px-3 py-2 rounded-pill">5 000 SO‘M</span>
+                  <i class="bi bi-gift-fill fs-3 text-danger"></i>
+                </div>
+                <h4 class="fw-bold">To‘g‘ridan-to‘g‘ri bonus</h4>
+                <p class="text-dark-75 small mb-4">
+                  Buyurtma yakuniy summasidan 5 000 so‘m darhol ayriladi. Tezkor va qulay imkoniyat!
+                </p>
+              </div>
+              <div class="d-flex align-items-center justify-content-between bg-white-75 p-3 rounded-3">
+                <div>
+                  <small class="d-block text-muted">Promo-kod</small>
+                  <strong class="fs-6 tracking-wide text-danger">TEZ5000</strong>
+                </div>
+                <button
+                  type="button"
+                  class="btn btn-sm btn-dark fw-bold rounded-pill px-3 copy-promo-btn"
+                  data-promo="TEZ5000"
+                >
+                  Nusxalash
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mahsulotlar bo'limi (Qidiruv + Kategoriyalar filtri + Kartalar) -->
+    <section id="menyu" class="py-5 bg-light">
+      <div class="container py-3">
+        <div class="text-center mb-4">
+          <span class="section-tag text-danger fw-bold text-uppercase small">To‘liq assortiment</span>
+          <h2 class="display-6 fw-bold mt-1">Bizning menyu</h2>
+          <p class="text-muted">Kategoriyani tanlang yoki nomi bo‘yicha tezda qidiring</p>
+        </div>
+
+        <!-- Qidiruv va filtrlash paneli -->
+        <div class="row g-3 align-items-center justify-content-between bg-white p-3 p-md-4 rounded-4 shadow-sm mb-4">
+          <div class="col-lg-7">
+            <div class="d-flex flex-wrap gap-2" id="categoryTabs" role="tablist">
+              <button
+                type="button"
+                class="btn btn-danger rounded-pill px-4 py-2 fw-semibold category-filter-btn active"
+                data-category="all"
+              >
+                Barchasi
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-secondary rounded-pill px-4 py-2 fw-semibold category-filter-btn"
+                data-category="Fast Food"
+              >
+                <i class="bi bi-burger me-1"></i>Fast Food
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-secondary rounded-pill px-4 py-2 fw-semibold category-filter-btn"
+                data-category="Ichimliklar"
+              >
+                <i class="bi bi-cup-straw me-1"></i>Ichimliklar
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-secondary rounded-pill px-4 py-2 fw-semibold category-filter-btn"
+                data-category="Desertlar"
+              >
+                <i class="bi bi-cake2 me-1"></i>Desertlar
+              </button>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="input-group search-input-group">
+              <span class="input-group-text bg-light border-end-0 rounded-start-pill ps-3">
+                <i class="bi bi-search text-muted"></i>
+              </span>
+              <input
+                type="search"
+                id="searchInput"
+                class="form-control bg-light border-start-0 border-end-0 py-2"
+                placeholder="Masalan: Lavash, Pitsa, Cola, Tort..."
+                aria-label="Mahsulot qidirish"
+              />
+              <button
+                type="button"
+                id="clearSearchBtn"
+                class="btn bg-light border-start-0 rounded-end-pill pe-3 text-muted d-none"
+                title="Qidiruvni tozalash"
+              >
+                <i class="bi bi-x-lg"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mahsulotlar natijasi hisoblagichi -->
+        <div class="d-flex justify-content-between align-items-center mb-3 px-1">
+          <small id="productsCountText" class="text-muted fw-medium"></small>
+        </div>
+
+        <!-- Mahsulotlar kartalari -->
+        <div id="productsGrid" class="row g-4"></div>
+
+        <!-- Mahsulot topilmasa chiqadigan blok -->
+        <div id="emptySearchState" class="text-center py-5 d-none">
+          <div class="display-4 text-muted mb-2"><i class="bi bi-search"></i></div>
+          <h4 class="fw-bold">Mos mahsulot topilmadi</h4>
+          <p class="text-muted mb-3">Boshqa so‘z bilan qidirib ko‘ring yoki kategoriyani o‘zgartiring.</p>
+          <button type="button" id="resetFiltersBtn" class="btn btn-danger rounded-pill px-4 fw-semibold">
+            Filtrlarni tiklash
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mijozlar fikrlari -->
+    <section id="fikrlar" class="py-5">
+      <div class="container py-3">
+        <div class="text-center mb-5">
+          <span class="section-tag text-danger fw-bold text-uppercase small">Ishonch va sifat</span>
+          <h2 class="display-6 fw-bold mt-1">Mijozlar fikrlari</h2>
+          <p class="text-muted">Bizning taomlar va yetkazib berish xizmatimiz haqida haqiqiy fikrlar</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm rounded-4 p-4 review-card">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <div class="text-warning">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+                <span class="badge bg-light text-dark rounded-pill">Tasdiqlangan</span>
+              </div>
+              <p class="text-secondary mb-4">
+                “Lavash va chizburger 25 daqiqada issiqqina yetib keldi. Go‘shti yumshoq, souslari juda mazali. Endi faqat shu yerdan buyurtma beraman.”
+              </p>
+              <div class="d-flex align-items-center gap-3 mt-auto">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80"
+                  alt="Jasurbek Karimov"
+                  class="rounded-circle review-avatar"
+                />
+                <div>
+                  <h6 class="fw-bold mb-0">Jasurbek Karimov</h6>
+                  <small class="text-muted">Toshkent sh.</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm rounded-4 p-4 review-card">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <div class="text-warning">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+                <span class="badge bg-light text-dark rounded-pill">Tasdiqlangan</span>
+              </div>
+              <p class="text-secondary mb-4">
+                “Pitsa hamda cheesecake ajoyib chiqibdi. Sayt juda qulay, promo-kod ham muammosiz ishladi. To‘lovni Click orqali tez amalga oshirdim.”
+              </p>
+              <div class="d-flex align-items-center gap-3 mt-auto">
+                <img
+                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80"
+                  alt="Madina Alimova"
+                  class="rounded-circle review-avatar"
+                />
+                <div>
+                  <h6 class="fw-bold mb-0">Madina Alimova</h6>
+                  <small class="text-muted">Samarqand sh.</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm rounded-4 p-4 review-card">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <div class="text-warning">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-half"></i>
+                </div>
+                <span class="badge bg-light text-dark rounded-pill">Tasdiqlangan</span>
+              </div>
+              <p class="text-secondary mb-4">
+                “Kechki payt do‘stlar bilan buyurtma berdik. Nuggets, fri kartoshka va milkshake hammaga yoqdi. Xizmat sifati yuqori darajada.”
+              </p>
+              <div class="d-flex align-items-center gap-3 mt-auto">
+                <img
+                  src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80"
+                  alt="Sardorbek Rustamov"
+                  class="rounded-circle review-avatar"
+                />
+                <div>
+                  <h6 class="fw-bold mb-0">Sardorbek Rustamov</h6>
+                  <small class="text-muted">Andijon sh.</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Saytning pastki qismi (Footer) -->
+  <footer id="aloqa" class="bg-dark text-white pt-5 pb-4">
+    <div class="container">
+      <div class="row g-4 pb-4 border-bottom border-secondary-subtle">
+        <div class="col-lg-4">
+          <a class="navbar-brand d-inline-flex align-items-center gap-2 fw-bold fs-4 text-white mb-3" href="#bosh-sahifa">
+            <span class="brand-badge d-inline-flex align-items-center justify-content-center rounded-3">
+              <i class="bi bi-fire text-white"></i>
+            </span>
+            <span>Mazali<span class="text-warning">Fast</span></span>
+          </a>
+          <p class="text-white-50 small mb-4">
+            Har kuni yangi mahsulotlar, halol va sifatli ingredientlar hamda tezkor kuryerlik xizmati. Mazali lahzalarni biz bilan ulashing!
+          </p>
+          <div class="d-flex gap-2">
+            <a href="https://t.me" target="_blank" rel="noopener" class="social-btn rounded-circle" aria-label="Telegram">
+              <i class="bi bi-telegram"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="social-btn rounded-circle" aria-label="Instagram">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" class="social-btn rounded-circle" aria-label="Facebook">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener" class="social-btn rounded-circle" aria-label="YouTube">
+              <i class="bi bi-youtube"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4">
+          <h5 class="fw-bold mb-3">Tezkor havolalar</h5>
+          <ul class="list-unstyled d-grid gap-2 small">
+            <li><a href="#bosh-sahifa" class="footer-link">Bosh sahifa</a></li>
+            <li><a href="#mashhur" class="footer-link">Mashhur mahsulotlar</a></li>
+            <li><a href="#menyu" class="footer-link">To‘liq menyu</a></li>
+            <li><a href="#takliflar" class="footer-link">Maxsus takliflar</a></li>
+            <li><a href="#fikrlar" class="footer-link">Mijozlar fikrlari</a></li>
+          </ul>
+        </div>
+
+        <div class="col-sm-6 col-lg-4">
+          <h5 class="fw-bold mb-3">Aloqa ma'lumotlari</h5>
+          <ul class="list-unstyled d-grid gap-2 small text-white-75">
+            <li class="d-flex align-items-start gap-2">
+              <i class="bi bi-geo-alt-fill text-warning mt-1"></i>
+              <span>Toshkent sh., Amir Temur shoh ko‘chasi, 108-uy</span>
+            </li>
+            <li class="d-flex align-items-center gap-2">
+              <i class="bi bi-telephone-fill text-warning"></i>
+              <a href="tel:+998712005566" class="footer-link">+998 (71) 200-55-66</a>
+            </li>
+            <li class="d-flex align-items-center gap-2">
+              <i class="bi bi-envelope-fill text-warning"></i>
+              <a href="mailto:buyurtma@mazalifast.uz" class="footer-link">buyurtma@mazalifast.uz</a>
+            </li>
+            <li class="d-flex align-items-center gap-2">
+              <i class="bi bi-clock-fill text-warning"></i>
+              <span>Ish vaqti: Har kuni 09:00 – 02:00</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-4 d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 small text-white-50">
+        <div>© <span id="currentYear">2026</span> MazaliFast. Barcha huquqlar himoyalangan.</div>
+        <div>To‘lov tizimlari: Naqd • Click • Payme • Uzcard • Humo</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Savat (Shopping Cart) Offcanvas -->
+  <div
+    class="offcanvas offcanvas-end border-0 shadow-lg cart-offcanvas"
+    tabindex="-1"
+    id="cartOffcanvas"
+    aria-labelledby="cartOffcanvasLabel"
+  >
+    <div class="offcanvas-header border-bottom py-3 px-4">
+      <div class="d-flex align-items-center gap-2">
+        <i class="bi bi-bag-check-fill text-danger fs-4"></i>
+        <h5 class="offcanvas-title fw-bold mb-0" id="cartOffcanvasLabel">
+          Savatingiz (<span id="offcanvasCartCount">0</span>)
+        </h5>
+      </div>
+      <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas" aria-label="Yopish"></button>
+    </div>
+
+    <div class="offcanvas-body d-flex flex-column p-0">
+      <div id="cartItemsContainer" class="flex-grow-1 overflow-auto p-4"></div>
+
+      <div id="cartFooter" class="border-top bg-light p-4 d-none">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <span class="text-muted">Mahsulotlar soni:</span>
+          <strong id="cartTotalQty">0 ta</strong>
+        </div>
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <span class="fw-semibold fs-6">Umumiy narx:</span>
+          <span id="cartSubtotalPrice" class="fw-bold fs-4 text-danger">0 so‘m</span>
+        </div>
+        <button
+          type="button"
+          id="openCheckoutBtn"
+          class="btn btn-danger btn-lg w-100 rounded-pill fw-bold py-3 shadow-sm"
+        >
+          Buyurtmani rasmiylashtirish <i class="bi bi-arrow-right ms-1"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Buyurtmani rasmiylashtirish (Checkout) Modal -->
+  <div
+    class="modal fade"
+    id="checkoutModal"
+    tabindex="-1"
+    aria-labelledby="checkoutModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content border-0 rounded-4 shadow-lg">
+        <div class="modal-header border-bottom px-4 py-3">
+          <h5 class="modal-title fw-bold" id="checkoutModalLabel">
+            <i class="bi bi-receipt-cutoff text-danger me-2"></i>Buyurtmani rasmiylashtirish
+          </h5>
+          <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Yopish"></button>
+        </div>
+
+        <div class="modal-body p-4">
+          <form id="checkoutForm" novalidate>
+            <div class="row g-4">
+              <!-- Mijoz ma'lumotlari va to'lov usuli -->
+              <div class="col-lg-7">
+                <h6 class="fw-bold text-uppercase small text-muted mb-3">1. Yetkazib berish ma'lumotlari</h6>
+
+                <div class="mb-3">
+                  <label for="customerName" class="form-label fw-semibold">
+                    Ism-familiya <span class="text-danger">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control form-control-lg rounded-3"
+                    id="customerName"
+                    placeholder="Masalan: Azizbek Tursunov"
+                    required
+                  />
+                  <div class="invalid-feedback">Iltimos, ism-familiyangizni kiriting (kamida 3 ta belgi).</div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="customerPhone" class="form-label fw-semibold">
+                    Telefon raqami <span class="text-danger">*</span>
+                  </label>
+                  <input
+                    type="tel"
+                    class="form-control form-control-lg rounded-3"
+                    id="customerPhone"
+                    placeholder="+998 90 123 45 67"
+                    required
+                  />
+                  <div class="invalid-feedback">Iltimos, to‘g‘ri telefon raqamini kiriting (masalan: +998 90 123 45 67).</div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="customerAddress" class="form-label fw-semibold">
+                    Yetkazib berish manzili <span class="text-danger">*</span>
+                  </label>
+                  <textarea
+                    class="form-control rounded-3"
+                    id="customerAddress"
+                    rows="2"
+                    placeholder="Tuman, ko‘cha, uy yoki xonadon raqami, mo‘ljal"
+                    required
+                  ></textarea>
+                  <div class="invalid-feedback">Iltimos, yetkazib berish manzilini kiriting.</div>
+                </div>
+
+                <div class="mb-4">
+                  <label for="customerNote" class="form-label fw-semibold">Qo‘shimcha izoh</label>
+                  <textarea
+                    class="form-control rounded-3"
+                    id="customerNote"
+                    rows="2"
+                    placeholder="Masalan: Ketchup ko‘proq bo‘lsin, domofon ishlamaydi..."
+                  ></textarea>
+                </div>
+
+                <h6 class="fw-bold text-uppercase small text-muted mb-3">
+                  2. To‘lov usuli <span class="text-danger">*</span>
+                </h6>
+                <div class="row g-2 mb-3" id="paymentMethodsGroup">
+                  <div class="col-6 col-sm-4">
+                    <input type="radio" class="btn-check" name="paymentMethod" id="payCash" value="Naqd pul" checked />
+                    <label class="btn btn-outline-dark w-100 py-2 rounded-3 fw-semibold payment-label" for="payCash">
+                      <i class="bi bi-cash-stack d-block fs-5 mb-1"></i>Naqd pul
+                    </label>
+                  </div>
+                  <div class="col-6 col-sm-4">
+                    <input type="radio" class="btn-check" name="paymentMethod" id="payClick" value="Click" />
+                    <label class="btn btn-outline-dark w-100 py-2 rounded-3 fw-semibold payment-label" for="payClick">
+                      <i class="bi bi-phone-fill d-block fs-5 mb-1"></i>Click
+                    </label>
+                  </div>
+                  <div class="col-6 col-sm-4">
+                    <input type="radio" class="btn-check" name="paymentMethod" id="payPayme" value="Payme" />
+                    <label class="btn btn-outline-dark w-100 py-2 rounded-3 fw-semibold payment-label" for="payPayme">
+                      <i class="bi bi-wallet2 d-block fs-5 mb-1"></i>Payme
+                    </label>
+                  </div>
+                  <div class="col-6 col-sm-6">
+                    <input type="radio" class="btn-check" name="paymentMethod" id="payUzcard" value="Uzcard" />
+                    <label class="btn btn-outline-dark w-100 py-2 rounded-3 fw-semibold payment-label" for="payUzcard">
+                      <i class="bi bi-credit-card-2-front-fill d-block fs-5 mb-1"></i>Uzcard
+                    </label>
+                  </div>
+                  <div class="col-12 col-sm-6">
+                    <input type="radio" class="btn-check" name="paymentMethod" id="payHumo" value="Humo" />
+                    <label class="btn btn-outline-dark w-100 py-2 rounded-3 fw-semibold payment-label" for="payHumo">
+                      <i class="bi bi-credit-card-fill d-block fs-5 mb-1"></i>Humo
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Buyurtma tarkibi, promo-kod va yakuniy summa -->
+              <div class="col-lg-5">
+                <div class="bg-light rounded-4 p-3 p-md-4 border h-100 d-flex flex-column">
+                  <h6 class="fw-bold text-uppercase small text-muted mb-3">3. Buyurtma tarkibi</h6>
+
+                  <div id="checkoutItemsList" class="checkout-items-box mb-3 flex-grow-1"></div>
+
+                  <!-- Promo-kod maydoni -->
+                  <div class="mb-3 pt-2 border-top">
+                    <label for="promoCodeInput" class="form-label fw-semibold small mb-1">
+                      Promo-kod (ixtiyoriy)
+                    </label>
+                    <div class="input-group">
+                      <input
+                        type="text"
+                        id="promoCodeInput"
+                        class="form-control text-uppercase fw-semibold"
+                        placeholder="MAZALI15, FAST10, TEZ5000"
+                      />
+                      <button type="button" id="applyPromoBtn" class="btn btn-dark fw-semibold px-3">
+                        Qo‘llash
+                      </button>
+                    </div>
+                    <div id="promoFeedback" class="small mt-1"></div>
+                  </div>
+
+                  <!-- Hisob-kitob -->
+                  <div class="border-top pt-3 small">
+                    <div class="d-flex justify-content-between mb-2">
+                      <span class="text-muted">Mahsulotlar summasi:</span>
+                      <span id="checkoutSubtotal" class="fw-semibold">0 so‘m</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-2 text-success">
+                      <span>Chegirma:</span>
+                      <span id="checkoutDiscount" class="fw-semibold">-0 so‘m</span>
+                    </div>
+                    <div class="d-flex justify-content-between fs-5 fw-bold pt-2 border-top">
+                      <span>Yakuniy narx:</span>
+                      <span id="checkoutTotal" class="text-danger">0 so‘m</span>
+                    </div>
+                  </div>
+
+                  <button
+                    type="submit"
+                    id="confirmOrderBtn"
+                    class="btn btn-danger btn-lg w-100 rounded-pill fw-bold py-3 mt-4 shadow"
+                  >
+                    <i class="bi bi-check2-circle me-1"></i>Buyurtmani tasdiqlash
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Buyurtma muvaffaqiyatli qabul qilinganini bildiruvchi animatsiyali Modal -->
+  <div
+    class="modal fade"
+    id="successModal"
+    tabindex="-1"
+    aria-labelledby="successModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 rounded-4 shadow-lg text-center p-4">
+        <div class="success-animation-wrapper mx-auto mb-3">
+          <div class="success-pulse-ring"></div>
+          <div class="success-check-circle d-flex align-items-center justify-content-center rounded-circle bg-success text-white shadow">
+            <i class="bi bi-check-lg display-4"></i>
+          </div>
+        </div>
+
+        <h3 class="fw-bold text-success mb-2" id="successModalLabel">Buyurtmangiz qabul qilindi!</h3>
+        <p class="text-muted mb-3">
+          Buyurtma raqami: <strong id="orderNumberDisplay" class="text-dark">#MF-0000</strong>
+        </p>
+
+        <div class="bg-light rounded-3 p-3 text-start small mb-4">
+          <div class="d-flex justify-content-between mb-1">
+            <span class="text-muted">Mijoz:</span>
+            <strong id="summaryCustomerName">—</strong>
+          </div>
+          <div class="d-flex justify-content-between mb-1">
+            <span class="text-muted">Telefon:</span>
+            <strong id="summaryCustomerPhone">—</strong>
+          </div>
+          <div class="d-flex justify-content-between mb-1">
+            <span class="text-muted">To‘lov usuli:</span>
+            <strong id="summaryPaymentMethod">—</strong>
+          </div>
+          <div class="d-flex justify-content-between pt-2 border-top mt-2">
+            <span class="text-muted">Yakuniy to‘lov:</span>
+            <strong id="summaryFinalTotal" class="text-danger fs-6">0 so‘m</strong>
+          </div>
+        </div>
+
+        <p class="small text-muted mb-4">
+          Kuryerimiz tez orada siz bilan bog‘lanadi va buyurtmani ko‘rsatilgan manzilga yetkazadi. Yoqimli ishtaha!
+        </p>
+
+        <button
+          type="button"
+          class="btn btn-dark btn-lg rounded-pill px-5 fw-bold"
+          data-bs-dismiss="modal"
+        >
+          Xaridni davom ettirish
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast xabarnoma konteyneri -->
+  <div class="toast-container position-fixed bottom-0 start-0 p-3 z-toast">
+    <div id="liveToast" class="toast align-items-center text-bg-dark border-0 rounded-3 shadow-lg" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div id="toastMessage" class="toast-body fw-medium d-flex align-items-center gap-2">
+          <i class="bi bi-check-circle-fill text-warning fs-5"></i>
+          <span>Mahsulot savatga qo‘shildi!</span>
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto shadow-none" data-bs-dismiss="toast" aria-label="Yopish"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Maxsus JavaScript fayli -->
+  <script src="script.js"></script>
+</body>
+</html>
